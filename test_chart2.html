@@ -1,14 +1,12 @@
 
 <!DOCTYPE html>
 <head>
-  <title>Vega-Lite Chart</title>
+  <title>Testing ALTAIR</title>
   <meta charset="utf-8">
-
-  <script src="https://d3js.org/d3.v3.min.js"></script>
-  <script src="https://vega.github.io/vega/vega.js"></script>
-  <script src="https://vega.github.io/vega-lite/vega-lite.js"></script>
-  <script src="https://vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
-
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.1/vega.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.15/vega-lite.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.20/vega-embed.js"></script>
   <style media="screen">
     /* Add space between vega-embed links  */
     .vega-actions a {
@@ -19,9 +17,8 @@
 <body>
   <!-- Container for the visualization -->
   <div id="vis"></div>
-
   <script>
-  var vlSpec = {
+  var plot = Object.assign({
     "data": {
         "values": [
             {
@@ -4507,18 +4504,10 @@
         }
     },
     "mark": "circle"
-}
-
-  var embedSpec = {
-    mode: "vega-lite",  // Instruct Vega-Embed to use the Vega-Lite compiler
-    spec: vlSpec
-  };
+}, {'description': 'A simple bar chart with embedded data.', '$schema': 'https://vega.github.io/schema/vega-lite/v2.0.json'});
 
   // Embed the visualization in the container with id `vis`
-  vg.embed("#vis", embedSpec, function(error, result) {
-    // Callback receiving the View instance and parsed Vega spec
-    // result.view is the View, which resides under the '#vis' element
-  });
+  vega.embed("#vis", plot);
   </script>
 </body>
 </html>
