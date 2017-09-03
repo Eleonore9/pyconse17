@@ -47,6 +47,15 @@ custom_template_with_text = """
     .vega-actions a {{
       margin-right: 5px;
     }}
+    #vis3 {{
+      float: left;
+    }}
+    #vis2 {{
+      float: left;
+    }}
+    .lower {{
+      clear: both;
+    }}
   </style>
 </head>
 <body>
@@ -59,20 +68,28 @@ custom_template_with_text = """
    </nav>
    <h3 class="text-muted">Telling stories with data</h3>
    </div>
-   <h1>{title}</h1>
-   <div class="col"><h4>{paragraph_1}</h4></div>
+   <h2>{title}</h2>
+   <div class="col"><h5>{paragraph_1}</h5></div>
     <div class="jumbotron">
      <!-- Container for the visualization -->
+     <div id="vis2"></div>
+     <div id="vis3"></div>
      <div id="vis"></div>
    </div>
-   <div class="col"><h4>{paragraph_2}</h4></div>
-   <div class="col">{references}</div>
+   <div class="col lower">
+    <div class="row"><h5>{paragraph_2}</h5></div>
+    <div class="row">{references}</div>
+   </div>
   </div>
   <script>
   var plot = Object.assign({spec}, {fix});
+  var plot2 = Object.assign({figure_2}, {fix});
+  var plot3 = Object.assign({figure_3}, {fix})
 
   // Embed the visualization in the container with id `vis`
   vega.embed("#vis", plot);
+  vega.embed("#vis2", plot2);
+  vega.embed("#vis3", plot3);
   </script>
 </body>
 </html>
