@@ -4533,20 +4533,20 @@ Done using the Vega-Lite <a href="https://github.com/vega/vega-datasets/blob/gh-
             }
         ]
     };
-    var plot = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.0.json",
-    "description": "A simple bar chart with embedded data.",
-    "transform": [{"calculate": "year(datum.Year)", "as": "Year"}],
-  "layer": [{
-    "selection": {
-      "CylYr": {
-        "type": "single", "fields": ["Cylinders", "Year"],
-        "bind": {
-          "Cylinders": {"input": "range", "min": 3, "max": 8, "step": 1},
-          "Year": {"input": "range", "min": 1969, "max": 1981, "step": 1}
-        }
-      }
-    },
+var plot = {
+   "$schema": "https://vega.github.io/schema/vega-lite/v2.0.json",
+   "description": "A simple bar chart with embedded data.",
+   "transform": [{"calculate": "year(datum.Year)", "as": "Year"}],
+   "layer": [{
+     "selection": {
+       "CylYr": {
+         "type": "single", "fields": ["Cylinders", "Year"],
+         "bind": {
+           "Cylinders": {"input": "range", "min": 3, "max": 8, "step": 1},
+           "Year": {"input": "range", "min": 1969, "max": 1981, "step": 1}
+         }
+       }
+     },
     "mark": "circle",
     "encoding": {
       "x": {"field": "Horsepower", "type": "quantitative"},
@@ -4569,7 +4569,7 @@ Done using the Vega-Lite <a href="https://github.com/vega/vega-datasets/blob/gh-
     "mark": "circle",
     "data": data
 };
-    var plot2 = {
+var plot2 = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.0.json",
     "description": "A simple bar chart with embedded data.",
     "data": data,
@@ -4581,7 +4581,7 @@ Done using the Vega-Lite <a href="https://github.com/vega/vega-datasets/blob/gh-
     "encoding": {
         "x": {
             "bin": {
-                "base": 30.0
+                  "base": 30.0
             },
             "field": "Miles_per_Gallon",
             "type": "quantitative"
