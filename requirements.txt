@@ -1,7 +1,7 @@
 Jinja2==2.9.6
 MarkupSafe==1.0
 Pygments==2.2.0
-altair==1.2.0
+altair==1.2.1
 backports-abc==0.5
 bleach==2.0.0
 decorator==4.0.11
